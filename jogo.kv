@@ -1,0 +1,116 @@
+<Jogo>:
+    
+    orientation: "vertical"
+    
+    BoxLayout:
+        canvas: 
+            Color: 
+                rgba: 0/64, 0/64, 255/64, 0.5
+            Rectangle:
+                pos: self.pos
+                size: self.size 
+        Label:
+            text:  "Pedra, Papel ou Tesoura"
+            bold: True
+            color: 0, 0, 0, 1
+            font_size: 45
+    BoxLayout:
+        Label:
+            text: "Faça sua jogada!"
+            font_size:30
+    BoxLayout:
+        orientation: "horizontal"
+        Button:
+            background_normal: "pedra.jpg"
+            border: 0, 0, 0, 0
+            id: pedra
+            on_press: root.clica_pedra()
+        Label: 
+            text: "OU"
+        Button:
+            background_normal: "papel.jpg"
+            border: 0, 0, 0, 0
+            id: papel
+            on_press: root.clica_papel()
+        Label: 
+            text: "OU"
+        Button:
+            background_normal: "tesoura.jpg"
+            border: 0, 0, 0, 0
+    
+            id: tesoura 
+            on_press: root.clica_tesoura()
+  
+           
+    BoxLayout:
+        orientation: "horizontal"
+        Label:
+            text: "Jogada do computador"
+        Label: 
+            id: computador
+        
+               
+    BoxLayout: 
+        Label: 
+            id: resultado
+            text: "Resultado"
+    BoxLayout:
+        canvas: 
+            Color: 
+                rgba: 0/64, 0/64, 255/64, 0.5
+            Rectangle:
+                pos: self.pos
+                size: self.size 
+        Label:
+            text: "VOCÊ"
+            font_size: 20
+            color: 0, 0, 0, 1
+            bold: True
+        Label:
+            id: pontuacao
+            text: "0"
+            color: 0, 0, 0, 1
+            bold: True
+            font_size: 40
+        Label: 
+            text: "X"
+            font_size: 30
+            color: 0, 0, 0, 1
+            bold: True
+        Label:
+            id: pontuacao_computador
+            text: "0"
+            color: 0, 0, 0, 1
+            bold: True
+            font_size: 40
+        Label: 
+            text: "COMPUTADOR"
+            font_size: 20
+            color: 0, 0, 0, 1
+            bold: True
+        
+    BoxLayout:
+        Label:
+            text: "SOM"
+        CheckBox:
+            id: som
+            active: True
+            on_active: root.controla_som(som.active)
+        Button:
+            size_hint_y: None
+            height: 30
+            size_hint_x: 0.5
+
+            text: "Restaurar Partida"
+            id: sair
+            on_press: root.restaurar()
+            
+          
+        
+
+    
+
+        
+        
+
+    
